@@ -8,7 +8,7 @@ class App extends Component {
       <div>
         <Palette {...seedColors[4]} />
       </div>
-    )
+    );
   }
 }
 
