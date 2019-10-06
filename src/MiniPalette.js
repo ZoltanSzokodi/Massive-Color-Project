@@ -3,6 +3,7 @@ import { withStyles } from '@material-ui/styles';
 
 const styles = {
   root: {
+    height: "100%",
     backgroundColor: "white",
     border: "1px solid black",
     borderRadius: "5px",
@@ -15,7 +16,7 @@ const styles = {
   },
   colors: {
     backgroundColor: "#dae1e4",
-    height: "150px",
+    height: "75%",
     width: "100%",
     borderRadius: "5px",
     overflow: "hidden"
@@ -55,7 +56,7 @@ function MiniPalette(props) {
   ))
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} onClick={props.handleClick}>
       <div className={classes.colors}>
         {miniColorBoxes}
       </div>
