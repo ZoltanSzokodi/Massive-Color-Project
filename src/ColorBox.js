@@ -20,7 +20,7 @@ class ColorBox extends Component {
 
   render() {
     // Destructuring - ES6
-    const { background, name, moreUrl } = this.props;
+    const { background, name, moreUrl, showLink } = this.props;
     const { copied } = this.state;
     return (
       // npm Package react-copy-to-clipboard
@@ -43,9 +43,14 @@ class ColorBox extends Component {
 
             <button className="copy-button">Copy</button>
           </div>
-          <Link to={moreUrl} onClick={e => e.stopPropagation()}>
-            <span className="see-more">More</span>
-          </Link>
+
+          {/* Ternary Operator */}
+          {showLink &&
+            (<Link to={moreUrl} onClick={e => e.stopPropagation()}>
+              <span className="see-more">More</span>
+            </Link>
+            )}
+
         </div>
       </CopyToClipboard >
     );
