@@ -4,7 +4,8 @@ export default {
     height: "100vh",
     display: "flex",
     alignItems: "flex-start",
-    justifyContent: "center"
+    justifyContent: "center",
+    overflow: "scroll"
   },
   container: {
     width: "50%",
@@ -17,7 +18,6 @@ export default {
     display: "flex",
     width: "100%",
     justifyContent: "space-between",
-    color: "white",
     alignItems: "center",
     color: "white",
     "& a": {
@@ -26,7 +26,6 @@ export default {
   },
   palettes: {
     boxSizing: "border-box",
-    height: "80vh",
     width: "100%",
     display: "grid",
     gridTemplateColumns: "repeat(3, 30%)",
