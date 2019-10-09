@@ -58,4 +58,4 @@ const styles = theme => ({
   },
 });
 
-export { styles, drawerWidth };
+export default styles;

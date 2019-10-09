@@ -1,6 +1,6 @@
 export default {
   root: {
-    height: "100%",
+    height: "150px",
     backgroundColor: "white",
     border: "1px solid black",
     borderRadius: "5px",
