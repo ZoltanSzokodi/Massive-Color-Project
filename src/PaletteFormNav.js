@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
+import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -9,6 +10,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Button from '@material-ui/core/Button';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
+import styles from './styles/PaletteFormNavStyles';
 
 class PaletteFormNav extends Component {
   constructor(props) {
@@ -35,7 +37,7 @@ class PaletteFormNav extends Component {
     const { classes, open, handleSubmit, handleDrawerOpen } = this.props;
     const { newPaletteName } = this.state;
     return (
-      <div>
+      <div className={classes.root}>
         <CssBaseline />
         <AppBar
           position="fixed"
@@ -54,9 +56,10 @@ class PaletteFormNav extends Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" color="inherit" noWrap>
-              Persistent drawer
+              Create a Palette
             </Typography>
-
+          </Toolbar>
+          <div className={classes.navBtns}>
             <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
               <TextValidator
                 value={this.state.newPaletteName}
@@ -71,22 +74,20 @@ class PaletteFormNav extends Component {
                 variant="contained"
                 color="primary"
                 type="submit" >Save Palette</Button>
-
-              <Link to="/">
-                <Button
-                  variant="contained"
-                  color="secondary">Go Back</Button>
-              </Link>
-
             </ValidatorForm>
-          </Toolbar>
+            <Link to="/">
+              <Button
+                variant="contained"
+                color="secondary">Go Back</Button>
+            </Link>
+          </div>
         </AppBar>
       </div>
     );
   }
 }
 
-export default PaletteFormNav;
+export default withStyles(styles, { withTheme: true })(PaletteFormNav);
 
 
 
