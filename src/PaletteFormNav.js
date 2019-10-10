@@ -41,6 +41,7 @@ class PaletteFormNav extends Component {
 
   render() {
     const { classes, open, palettes, handleDrawerOpen, handleSubmit } = this.props;
+    const { newPaletteName } = this.state;
 
     return (
       <div className={classes.root}>
