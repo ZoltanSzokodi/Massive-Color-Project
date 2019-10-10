@@ -71,7 +71,7 @@ class PaletteMetaForm extends Component {
           </DialogContent>
           <DialogActions>
             <Button
-              onClick={this.handleClose}
+              onClick={this.props.hideForm}
               color="primary">
               Cancel
             </Button>
