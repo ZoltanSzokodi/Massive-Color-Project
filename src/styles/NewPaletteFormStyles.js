@@ -2,7 +2,7 @@ const drawerWidth = 300;
 
 const styles = theme => ({
   root: {
-    display: 'flex',
+    display: 'flex'
   },
   hide: {
     display: 'none',
@@ -13,6 +13,8 @@ const styles = theme => ({
   },
   drawerPaper: {
     width: drawerWidth,
+    display: "flex",
+    alignItems: "center"
   },
   drawerHeader: {
     display: 'flex',
@@ -38,6 +40,26 @@ const styles = theme => ({
     }),
     marginLeft: 0,
   },
+  container: {
+    width: "90%",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  title: {
+    fontSize: "30px",
+    textAlign: "center",
+    marginBottom: "40px"
+  },
+  buttons: {
+    width: "100%"
+  },
+  button: {
+    width: "50%",
+    fontSize: "12px"
+  }
 });
 
 export default styles;
