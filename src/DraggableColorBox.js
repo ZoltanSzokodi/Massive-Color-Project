@@ -11,7 +11,6 @@ const DraggableColorBox = SortableElement(props => {
     <div
       className={classes.root}
       style={{ backgroundColor: color }}>
-      {name}
       <div className={classes.boxContent}>
         <span>{name}</span>
         <span>
