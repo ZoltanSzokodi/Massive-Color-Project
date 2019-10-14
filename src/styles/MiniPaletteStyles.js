@@ -26,12 +26,12 @@ export default {
     margin: "0",
     color: "black",
     paddingTop: "0.5rem",
-    fontSize: "1rem",
+    fontSize: "0.9rem",
     position: "relative"
   },
   emoji: {
     marginLeft: "0.5rem",
-    fontSize: "1.5rem"
+    fontSize: "1rem"
   },
   miniColor: {
     height: "25%",
@@ -40,9 +40,6 @@ export default {
     margin: "0 auto",
     position: "relative",
     marginBottom: "-4px"
-  },
-  delete: {
-
   },
   deleteIcon: {
     color: "white",
