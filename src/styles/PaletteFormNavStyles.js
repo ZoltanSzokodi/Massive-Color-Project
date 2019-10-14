@@ -4,6 +4,9 @@ const styles = theme => ({
   root: {
     display: "flex"
   },
+  hide: {
+    display: 'none',
+  },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: drawerWidth,

@@ -8,9 +8,9 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import AddToPhotos from '@material-ui/icons/AddToPhotos';
 import Button from '@material-ui/core/Button';
-import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
+// import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import styles from './styles/PaletteFormNavStyles';
 
 class PaletteFormNav extends Component {
@@ -58,9 +58,9 @@ class PaletteFormNav extends Component {
               color="inherit"
               aria-label="Open drawer"
               onClick={handleDrawerOpen}
-              className={classNames(classes.menuButton, open && classes.hide)}
+              className={classNames(classes.menuButton, { [classes.hide]: open })}
             >
-              <MenuIcon />
+              <AddToPhotos />
             </IconButton>
             <Typography variant="h6" color="inherit" noWrap>
               Create a Palette
@@ -86,13 +86,15 @@ class PaletteFormNav extends Component {
           </div>
 
         </AppBar>
-        {this.state.formShowing && (
-          <PaletteMetaForm
-            palettes={palettes}
-            handleSubmit={handleSubmit}
-            hideForm={this.hideForm} />
-        )}
-      </div>
+        {
+          this.state.formShowing && (
+            <PaletteMetaForm
+              palettes={palettes}
+              handleSubmit={handleSubmit}
+              hideForm={this.hideForm} />
+          )
+        }
+      </div >
     );
   }
 }
