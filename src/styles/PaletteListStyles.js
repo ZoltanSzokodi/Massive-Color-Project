@@ -1,8 +1,9 @@
 import sizes from './sizes';
+import bg from './bg.svg';
 
 export default {
   root: {
-    backgroundColor: "blue",
+    background: `url(${bg})`,
     height: "100vh",
     display: "flex",
     alignItems: "flex-start",
