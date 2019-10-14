@@ -1,7 +1,15 @@
-import sizes from './sizes';
-import bg from './bg.svg';
-
+import sizes from "./sizes";
+import bg from "./bg.svg";
 export default {
+  "@global": {
+    ".item-exit": {
+      opacity: 1
+    },
+    ".item-exit-active": {
+      opacity: 0,
+      transition: "opacity 500ms ease-in"
+    }
+  },
   root: {
     background: `url(${bg})`,
     height: "100vh",
