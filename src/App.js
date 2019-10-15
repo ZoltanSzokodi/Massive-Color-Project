@@ -7,15 +7,7 @@ import seedColors from './seedColor';
 import NewPaletteform from './NewPaletteForm';
 import { generatePalette } from './colorHelpers';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import { withStyles } from '@material-ui/styles';
-
-const styles = {
-  page: {
-    height: "100vh",
-    width: "100%",
-    position: "fixed"
-  }
-}
+import Page from './Page';
 
 class App extends Component {
   constructor(props) {
@@ -53,12 +45,11 @@ class App extends Component {
   }
 
   render() {
-    const { classes } = this.props;
     return (
       <Route render={({ location }) => (
         <TransitionGroup>
           <CSSTransition
-            classNames="item"
+            classNames="page"
             timeout={500}
             key={location.key} >
             <Switch location={location}>
@@ -66,13 +57,13 @@ class App extends Component {
                 exact
                 path="/palette/new"
                 render={(routeProps) => (
-                  <div className={classes.page}>
+                  <Page>
                     <NewPaletteform
                       savePalette={this.savePalette}
                       palettes={this.state.palettes}
                       {...routeProps}
                     />
-                  </div>
+                  </Page>
                 )}
               />
 
@@ -80,14 +71,14 @@ class App extends Component {
                 exact
                 path="/palette/:paletteId/:colorId"
                 render={routeProps => (
-                  <div className={classes.page}>
+                  <Page>
                     <SingleColorPalette
                       colorId={routeProps.match.params.colorId}
                       palette={generatePalette(
                         this.findPalette(routeProps.match.params.paletteId)
                       )}
                     />
-                  </div>
+                  </Page>
                 )}
               />
 
@@ -95,13 +86,13 @@ class App extends Component {
                 exact
                 path="/"
                 render={(routeProps) => (
-                  <div className={classes.page}>
+                  <Page>
                     <PaletteList
                       palettes={this.state.palettes}
                       deletePalette={this.deletePalette}
                       {...routeProps}
                     />
-                  </div>
+                  </Page>
                 )}
               />
 
@@ -109,13 +100,13 @@ class App extends Component {
                 exact
                 path="/palette/:id"
                 render={routeProps => (
-                  <div className={classes.page}>
+                  <Page>
                     <Palette
                       palette={generatePalette(
                         this.findPalette(routeProps.match.params.id)
                       )}
                     />
-                  </div>
+                  </Page>
                 )}
               />
             </Switch>
@@ -126,4 +117,4 @@ class App extends Component {
   }
 }
 
-export default withStyles(styles)(App);
+export default App;
