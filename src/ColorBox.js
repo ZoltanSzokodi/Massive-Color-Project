@@ -4,7 +4,6 @@ import { withStyles } from '@material-ui/styles';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import styles from './styles/ColorBoxStyles';
 
-
 class ColorBox extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +21,13 @@ class ColorBox extends Component {
 
   render() {
     // Destructuring - ES6
-    const { background, name, moreUrl, showingFullPalette, classes } = this.props;
+    const {
+      background,
+      name,
+      moreUrl,
+      showingFullPalette,
+      classes } = this.props;
+
     const { copied } = this.state;
 
     return (
